@@ -2,3 +2,4 @@
 2024-06-25T18:20:40  refactor: future me will understand this
 2024-07-23T13:37:47  perf(fixtures): add usage examples to help
 2024-08-03T08:54:54  perf(core): add pagination to large reports
+2024-08-13T15:11:01  build(tests): support stdin as a source
