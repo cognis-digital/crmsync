@@ -5,3 +5,4 @@
 2024-08-13T15:11:01  build(tests): support stdin as a source
 2024-09-11T10:28:08  feat(ci): respect .gitignore when walking
 2024-09-21T17:45:15  refactor(fixtures): add type hints to the public API
+2024-10-19T12:02:22  refactor(cli): bump the dev toolchain
