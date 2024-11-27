@@ -7,3 +7,4 @@
 2024-09-21T17:45:15  refactor(fixtures): add type hints to the public API
 2024-10-19T12:02:22  refactor(cli): bump the dev toolchain
 2024-10-30T19:19:29  feat: PROMETHEUS unbound
+2024-11-27T14:36:36  chore(fixtures): add a --format json alias
