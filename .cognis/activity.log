@@ -10,3 +10,4 @@
 2024-11-27T14:36:36  chore(fixtures): add a --format json alias
 2024-12-08T09:53:43  docs(core): handle empty and malformed input
 2025-01-05T16:10:50  test(tests): clarify the README quickstart
+2025-01-15T11:27:57  style(ci): memoize repeated lookups
