@@ -12,3 +12,4 @@
 2025-01-05T16:10:50  test(tests): clarify the README quickstart
 2025-01-15T11:27:57  style(ci): memoize repeated lookups
 2025-01-26T18:44:04  fix(fixtures): add --fail-on threshold handling
+2025-02-23T13:01:11  fix(cli): skip binary files by sniffing
