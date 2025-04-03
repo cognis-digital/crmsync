@@ -14,3 +14,4 @@
 2025-01-26T18:44:04  fix(fixtures): add --fail-on threshold handling
 2025-02-23T13:01:11  fix(cli): skip binary files by sniffing
 2025-03-06T08:18:18  chore: routine maintenance
+2025-04-03T15:35:25  build(fixtures): guard against ReDoS in patterns
