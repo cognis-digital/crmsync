@@ -16,3 +16,4 @@
 2025-03-06T08:18:18  chore: routine maintenance
 2025-04-03T15:35:25  build(fixtures): guard against ReDoS in patterns
 2025-04-13T10:52:32  feat(core): tune severity weights
+2025-05-11T17:09:39  refactor(tests): make timestamps timezone-aware
