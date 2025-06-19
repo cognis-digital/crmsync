@@ -18,3 +18,4 @@
 2025-04-13T10:52:32  feat(core): tune severity weights
 2025-05-11T17:09:39  refactor(tests): make timestamps timezone-aware
 2025-05-21T12:26:46  refactor(ci): stream large files without buffering
+2025-06-19T19:43:53  ci(fixtures): wire the MCP tool schema
