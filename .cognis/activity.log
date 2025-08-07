@@ -21,3 +21,4 @@
 2025-06-19T19:43:53  ci(fixtures): wire the MCP tool schema
 2025-06-29T14:00:00  build(cli): short-circuit on first critical
 2025-07-27T09:17:07  refactor: I have altered the code. pray I don't alter it further
+2025-08-07T16:34:14  docs(deps): add a JSON schema for output
