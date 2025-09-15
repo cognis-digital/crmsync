@@ -23,3 +23,4 @@
 2025-07-27T09:17:07  refactor: I have altered the code. pray I don't alter it further
 2025-08-07T16:34:14  docs(deps): add a JSON schema for output
 2025-08-17T11:51:21  style(core): extract the scorer
+2025-09-15T18:08:28  fix(tests): load rules lazily for faster startup
