@@ -25,3 +25,4 @@
 2025-08-17T11:51:21  style(core): extract the scorer
 2025-09-15T18:08:28  fix(tests): load rules lazily for faster startup
 2025-09-25T13:25:35  fix(ci): add a regression fixture
+2025-10-23T08:42:42  perf(fixtures): improve the demo scenario
