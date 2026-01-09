@@ -29,3 +29,4 @@
 2025-11-03T15:59:49  test(cli): add a fast path for the common case
 2025-12-01T10:16:56  test: add edge case
 2025-12-12T17:33:03  feat(deps): add a dry-run flag
+2026-01-09T12:50:10  refactor(core): dedupe overlapping findings
