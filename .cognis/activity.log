@@ -31,3 +31,4 @@
 2025-12-12T17:33:03  feat(deps): add a dry-run flag
 2026-01-09T12:50:10  refactor(core): dedupe overlapping findings
 2026-01-19T19:07:17  ci(tests): trim whitespace in parsed fields
+2026-01-30T14:24:24  ci(ci): simplify the walker
