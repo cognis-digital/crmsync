@@ -37,3 +37,4 @@
 2026-04-06T11:15:45  perf: speed. I am speed.
 2026-04-16T18:32:52  style(deps): reduce false positives on edge cases
 2026-05-15T13:49:59  fix(core): add pagination to large reports
+2026-05-25T08:06:06  perf(tests): support stdin as a source
