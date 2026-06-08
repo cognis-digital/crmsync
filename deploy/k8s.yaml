@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: { name: crmsync, labels: { app: crmsync } }
+spec:
+  replicas: 1
+  selector: { matchLabels: { app: crmsync } }
+  template:
+    metadata: { labels: { app: crmsync } }
+    spec:
+      containers:
+        - name: crmsync
+          image: ghcr.io/cognis-digital/crmsync:latest
+          ports: [{ containerPort: 8000 }]
+          resources:
+            requests: { cpu: "50m", memory: "64Mi" }
+            limits: { cpu: "500m", memory: "256Mi" }
+---
+apiVersion: v1
+kind: Service
+metadata: { name: crmsync }
+spec:
+  selector: { app: crmsync }
+  ports: [{ port: 80, targetPort: 8000 }]
