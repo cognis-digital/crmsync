@@ -1,0 +1,10 @@
+{
+  "name": "@cognis/crmsync",
+  "version": "0.2.0",
+  "description": "JavaScript port of crmsync (Cognis Neural Suite)",
+  "bin": {
+    "crmsync": "index.js"
+  },
+  "license": "LicenseRef-COCL-1.0",
+  "type": "module"
+}
