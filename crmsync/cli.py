@@ -28,7 +28,6 @@ from .core import (
     SyncPlan,
     apply_plan,
     diff_records,
-    ensure_schema,
     load_db_state,
     load_export,
 )

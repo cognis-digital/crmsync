@@ -16,7 +16,7 @@
 </div>
 
 ```bash
-pip install cognis-crmsync
+pip install "git+https://github.com/cognis-digital/crmsync.git"
 crmsync scan .            # → prioritized findings in seconds
 ```
 
@@ -51,7 +51,7 @@ A single MCP-native binary that makes your CRM a replica of a versioned local fi
 ## Quick start
 
 ```bash
-pip install cognis-crmsync
+pip install "git+https://github.com/cognis-digital/crmsync.git"
 crmsync --version
 crmsync scan .                       # scan current project
 crmsync scan . --format json         # machine-readable
