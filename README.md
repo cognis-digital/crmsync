@@ -20,6 +20,41 @@ pip install cognis-crmsync
 crmsync scan .            # → prioritized findings in seconds
 ```
 
+## Usage — step by step
+
+1. Install the CLI (Python 3.9+):
+
+   ```bash
+   pip install crmsync        # or: pip install .   from a checkout
+   ```
+
+2. Detect drift — the `diff` subcommand compares a versioned CRM export (CSV/TSV/JSON) against a local SQLite store and exits `1` when they differ:
+
+   ```bash
+   crmsync diff contacts.csv --db crm.db --table contacts --key email
+   ```
+
+3. Sync the DB to match the export (idempotent) with `apply`:
+
+   ```bash
+   crmsync apply contacts.csv --db crm.db --table contacts --key email
+   ```
+
+   Add `--no-delete` to keep DB rows that are absent from the export.
+
+4. Read drift programmatically with the global `--format json` flag (it precedes the subcommand):
+
+   ```bash
+   crmsync --format json diff deals.json --db crm.db --key deal_id | jq .
+   ```
+
+5. Gate CI on CRM consistency — the job fails (exit 1) whenever the export and DB drift apart:
+
+   ```bash
+   crmsync diff contacts.csv --db crm.db --key email || echo "CRM export drifted from DB"
+   ```
+
+
 ## Contents
 
 - [Why crmsync?](#why) · [Features](#features) · [Quick start](#quick-start) · [Example](#example) · [Architecture](#architecture) · [AI stack](#ai-stack) · [How it compares](#how-it-compares) · [Integrations](#integrations) · [Install anywhere](#install-anywhere) · [Related](#related) · [Contributing](#contributing)
