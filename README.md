@@ -16,9 +16,15 @@
 </div>
 
 ```bash
-pip install cognis-crmsync
+pip install "git+https://github.com/cognis-digital/crmsync.git"
 crmsync scan .            # → prioritized findings in seconds
 ```
+
+<!-- cognis:layman:start -->
+## What is this?
+
+crmsync keeps your CRM contact and deal records in sync with a versioned export file (CSV or JSON) by storing the authoritative data in a local SQLite database. When you run it, it compares the export file to the database and shows you exactly what changed — new contacts added, existing ones updated, or records deleted — without making any changes you haven't approved. Running "apply" writes those changes in an idempotent way, meaning you can run it multiple times safely and get the same result every time. It is aimed at developers and ops teams who want a simple, scriptable way to keep CRM data consistent across systems without paying for an expensive integration platform.
+<!-- cognis:layman:end -->
 
 ## Contents
 
@@ -48,10 +54,56 @@ A single MCP-native binary that makes your CRM a replica of a versioned local fi
 <div align="right"><a href="#top">↑ back to top</a></div>
 
 <a name="quick-start"></a>
+<!-- cognis:domains:start -->
+## Domains
+
+**Primary domain:** Revenue & Business  ·  **JTF MERIDIAN division:** FOUNDRY · MASON
+
+**Topics:** `cognis` `business` `saas` `revenue-ops`
+
+Part of the **Cognis Neural Suite** — 300+ source-available tools organized across 12 domains under the JTF MERIDIAN command structure. See the [suite on GitHub](https://github.com/cognis-digital) and [jtf-meridian](https://github.com/cognis-digital/jtf-meridian) for how the pieces fit together.
+<!-- cognis:domains:end -->
+
+<!-- cognis:install:start -->
+## Install
+
+`crmsync` is source-available (not published to PyPI) — every method below installs
+straight from GitHub. Pick whichever you prefer; the one-line scripts auto-detect
+the best tool available on your machine.
+
+**One-liner (Linux / macOS):**
+```sh
+curl -fsSL https://raw.githubusercontent.com/cognis-digital/crmsync/HEAD/install.sh | sh
+```
+
+**One-liner (Windows PowerShell):**
+```powershell
+irm https://raw.githubusercontent.com/cognis-digital/crmsync/HEAD/install.ps1 | iex
+```
+
+**Or install manually — any one of:**
+```sh
+pipx install "git+https://github.com/cognis-digital/crmsync.git"     # isolated (recommended)
+uv tool install "git+https://github.com/cognis-digital/crmsync.git"  # uv
+pip install "git+https://github.com/cognis-digital/crmsync.git"      # pip
+```
+
+**From source:**
+```sh
+git clone https://github.com/cognis-digital/crmsync.git
+cd crmsync && pip install .
+```
+
+Then run:
+```sh
+crmsync --help
+```
+<!-- cognis:install:end -->
+
 ## Quick start
 
 ```bash
-pip install cognis-crmsync
+pip install "git+https://github.com/cognis-digital/crmsync.git"
 crmsync --version
 crmsync scan .                       # scan current project
 crmsync scan . --format json         # machine-readable

@@ -1,6 +1,5 @@
 """Smoke tests for CRMSYNC. No network. Operates on the bundled demo file."""
 import json
-import sqlite3
 from pathlib import Path
 
 import pytest

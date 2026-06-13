@@ -28,7 +28,6 @@ from .core import (
     SyncPlan,
     apply_plan,
     diff_records,
-    ensure_schema,
     load_db_state,
     load_export,
 )
@@ -52,12 +51,6 @@ def _build_parser() -> argparse.ArgumentParser:
     p.add_argument(
         "--version", action="version", version=f"{TOOL_NAME} {TOOL_VERSION}"
     )
-    p.add_argument(
-        "--format",
-        choices=("table", "json"),
-        default="table",
-        help="output format (default: table)",
-    )
     sub = p.add_subparsers(dest="command", required=True)
 
     common_parents = []
@@ -76,6 +69,12 @@ def _build_parser() -> argparse.ArgumentParser:
             "--key",
             default="email",
             help="business key field (default: email)",
+        )
+        sp.add_argument(
+            "--format",
+            choices=("table", "json"),
+            default="table",
+            help="output format (default: table)",
         )
 
     d = sub.add_parser(
