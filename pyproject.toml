@@ -34,3 +34,6 @@ crmsync = "crmsync.cli:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["crmsync"]
+
+[tool.hatch.metadata]
+allow-direct-references = true
