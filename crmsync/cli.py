@@ -137,12 +137,16 @@ def main(argv: Optional[List[str]] = None) -> int:
         return 2
 
     if args.command == "apply":
-        applied = apply_plan(
-            args.db,
-            args.table,
-            plan,
-            allow_delete=not args.no_delete,
-        )
+        try:
+            applied = apply_plan(
+                args.db,
+                args.table,
+                plan,
+                allow_delete=not args.no_delete,
+            )
+        except (sqlite3.Error, ValueError) as exc:
+            print(f"error: failed to apply changes to {args.db!r}: {exc}", file=sys.stderr)
+            return 2
         if args.format == "json":
             print(json.dumps({"applied": applied, "plan": plan.to_dict()}, indent=2))
         else:
