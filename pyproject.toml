@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "cognis-crmsync"
-version = "0.1.0"
+version = "0.1.1"
 description = "Bidirectional, idempotent sync of contacts/deals between a local SQLite source-of-truth and CRM APIs (HubSpot/Pipedrive/Salesforce) via one config."
 authors = [{name = "Cognis Digital", email = "suite@cognis.digital"}]
 license = {text = "LicenseRef-COCL-1.0"}
@@ -20,6 +20,7 @@ classifiers = [
 ]
 
 [project.optional-dependencies]
+connect = ["cognis-connect @ git+https://github.com/cognis-digital/cognis-connect.git"]
 mcp = ["mcp>=1.0"]
 dev = ["pytest>=8.0"]
 
@@ -28,6 +29,7 @@ Homepage = "https://cognis.digital"
 Repository = "https://github.com/cognis-digital/crmsync"
 
 [project.scripts]
+"crmsync-emit" = "crmsync.connect:emit_main"
 crmsync = "crmsync.cli:main"
 
 [tool.hatch.build.targets.wheel]
