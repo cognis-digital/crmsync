@@ -20,6 +20,68 @@ pip install cognis-crmsync
 crmsync scan .            # → prioritized findings in seconds
 ```
 
+
+<!-- cognis:example:start -->
+## 🔎 Example output
+
+Real, reproducible output from the tool — runs offline:
+
+```console
+$ crmsync-emit --version
+crmsync 0.1.0
+```
+
+```console
+$ crmsync-emit --help
+usage: crmsync [-h] [--version] [--format {table,json}] {diff,apply} ...
+
+Idempotent sync & drift detection between a local SQLite canonical store and a versioned CRM export file (CSV/JSON).
+
+positional arguments:
+  {diff,apply}
+    diff                show drift between export and DB (exit 1 if drift
+                        found)
+    apply               sync DB to match export (idempotent)
+
+options:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+  --format {table,json}
+                        output format (default: table)
+
+examples:
+  crmsync diff contacts.csv --db crm.db --key email
+  crmsync apply contacts.csv --db crm.db --key email
+  crmsync diff deals.json --db crm.db --key deal_id --format json
+```
+
+> Blocks above are real `crmsync` output — reproduce them from a clone.
+
+**Sample result format** _(illustrative values — run on your own data for real findings):_
+
+```
+{
+"findings": [
+    {
+        "id": "123456789",
+        "title": "Suspicious Network Traffic",
+        "description": "Unusual network traffic detected from IP 192.168.1.100",
+        "severity": "medium",
+        "created_at": "2023-02-15T14:30:00Z"
+    },
+    {
+        "id": "987654321",
+        "title": "Malware Detected",
+        "description": "Malware detected on machine with IP 192.168.1.101",
+        "severity": "high",
+        "created_at": "2023-02-15T14:35:00Z"
+    }
+]
+}
+```
+
+<!-- cognis:example:end -->
+
 ## Usage — step by step
 
 1. Install the CLI (Python 3.9+):

@@ -1,0 +1,22 @@
+$ crmsync-emit --help
+
+usage: crmsync [-h] [--version] [--format {table,json}] {diff,apply} ...
+
+Idempotent sync & drift detection between a local SQLite canonical store and a versioned CRM export file (CSV/JSON).
+
+positional arguments:
+  {diff,apply}
+    diff                show drift between export and DB (exit 1 if drift
+                        found)
+    apply               sync DB to match export (idempotent)
+
+options:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+  --format {table,json}
+                        output format (default: table)
+
+examples:
+  crmsync diff contacts.csv --db crm.db --key email
+  crmsync apply contacts.csv --db crm.db --key email
+  crmsync diff deals.json --db crm.db --key deal_id --format json

@@ -1,0 +1,3 @@
+$ crmsync-emit --version
+
+crmsync 0.1.0
